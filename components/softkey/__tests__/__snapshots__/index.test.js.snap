@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Softkey renders correctly 1`] = `
+<form
+  className="kai-softkey visible"
+  data-type="action"
+>
+  <Button
+    content="lsk"
+    pos="left"
+  />
+  <Button
+    content="ok"
+    pos="center"
+  />
+  <Button
+    content="rsk"
+    pos="right"
+  />
+</form>
+`;
+
+exports[`Softkey renders softkey buttons correctly 1`] = `
+<form
+  class="kai-softkey visible"
+  data-type="action"
+>
+  <button
+    class="kai-softkey-btn"
+    data-l10n-id="lsk"
+  />
+  <button
+    class="kai-softkey-btn"
+    data-l10n-id="ok"
+  />
+  <button
+    class="kai-softkey-btn"
+    data-l10n-id="rsk"
+  />
+</form>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Empty view renders correctly 1`] = `
+<div
+  className="kai-empty"
+>
+  <p
+    className="kai-empty-text"
+    data-l10n-id="empty"
+  />
+</div>
+`;

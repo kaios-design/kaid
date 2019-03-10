@@ -1,0 +1,176 @@
+:root {
+  --color-gs100: #000000;
+  --color-gs90: #323232;
+  --color-gs70: #6a6a6a;
+  --color-gs45: #8c8c8c;
+  --color-gs20: #cccccc;
+  --color-gs10: #e6e6e6;
+  --color-gs00: #ffffff;
+  --color-purple: #873eff;
+  --color-pink: #f6529b;
+  --color-lime: #82c51b;
+  --color-cyan: #1cc1c4;
+  --color-blue: #0da1e1;
+  --color-orange: #ff8329;
+  --color-red: #f3203d;
+  --color-purple-pressed: #6c32cc;
+  --color-pink-pressed: #bf2392;
+  --color-lime-pressed: #4f9a0d;
+  --color-cyan-pressed: #31979e;
+  --color-blue-pressed: #0a80b4;
+  --color-orange-pressed: #cc5310;
+  --color-red-pressed: #c21930;
+  --header-purple-background: #320374;
+  --header-pink-background: #48132c;
+  --header-lime-background: #153A06;
+  --header-cyan-background: #045463;
+  --header-blue-background: #20407b;
+  --header-orange-background: #381e0d;
+  --header-red-background: #5b0700; }
+
+.theme-system {
+  --highlight-color: var(--color-purple);
+  --highlight-color-pressed: var(--color-purple-pressed);
+  --header-background: var(--header-purple-background); }
+
+.theme-media {
+  --highlight-color: var(--color-pink);
+  --highlight-color-pressed: var(--color-pink-pressed);
+  --header-background: var(--header-pink-background); }
+
+.theme-communications {
+  --highlight-color: var(--color-lime);
+  --highlight-color-pressed: var(--color-lime-pressed);
+  --header-background: var(--header-lime-background); }
+
+.theme-service {
+  --highlight-color: var(--color-cyan);
+  --highlight-color-pressed: var(--color-cyan-pressed);
+  --header-background: var(--header-cyan-background); }
+
+.theme-settings {
+  --highlight-color: var(--color-blue);
+  --highlight-color-pressed: var(--color-blue-pressed);
+  --header-background: var(--header-blue-background); }
+
+.theme-productivity {
+  --highlight-color: var(--color-orange);
+  --highlight-color-pressed: var(--color-orange-pressed);
+  --header-background: var(--header-orange-background); }
+
+.theme-warning {
+  --highlight-color: var(--color-red);
+  --highlight-color-pressed: var(--color-red-pressed);
+  --header-background: var(--header-red-background); }
+
+* {
+  font-family: "Open Sans"; }
+
+.kai-header h1 {
+  font-weight: 300;
+  font-size: 1.7rem;
+  text-transform: capitalize; }
+
+p {
+  font-size: 1.7rem; }
+
+:root {
+  --statusbar-height: 2.6rem;
+  --softkeybar-height: 3rem;
+  --header-height: 2.8rem; }
+
+.kai-header h1 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.kai-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  line-height: 2.8rem; }
+  .kai-header h1 {
+    width: 100%;
+    height: 100%;
+    color: var(--color-gs00, #fff);
+    background: var(--header-background, #873eff);
+    text-align: center;
+    padding: 0 1rem;
+    margin: 0; }
+
+:root {
+  --softkeybar-background-color: var(--color-gs20, #cccccc);
+  --softkey-color: var(--color-gs90, #323232);
+  --softkey-color--icon: var(--color-gs70, #6a6a6a);
+  --softkey-color--disabled: var(--color-eta, #c7c7c7);
+  --softkey-background-color--active: #00aacc;
+  --softkey-font-size: 1.4rem;
+  --softkey-icon-size: 2rem;
+  --softkey-font-weight: 600; }
+
+.kai-softkey {
+  z-index: var(--z-index--softkey, 99999);
+  display: flex;
+  justify-content: space-between;
+  outline: none;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--softkey-color);
+  background-color: var(--softkeybar-background-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  .kai-softkey:not(.visible) {
+    opacity: 0; }
+  .kai-softkey > * {
+    text-transform: capitalize; }
+    .kai-softkey > *:first-child {
+      width: 45%;
+      text-align: left; }
+    .kai-softkey > *:nth-child(2) {
+      --softkey-font-size: 1.6rem;
+      --softkey-font-weight: 700;
+      flex-shrink: 0;
+      min-width: 1rem;
+      max-width: 31.66667%;
+      text-transform: uppercase; }
+    .kai-softkey > *:last-child {
+      width: 45%;
+      text-align: right; }
+  .kai-softkey-btn {
+    display: block;
+    min-width: 1rem;
+    height: var(--softkeybar-height, 3rem);
+    line-height: var(--softkeybar-height, 3rem);
+    padding: 0 0.5rem;
+    border: unset;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: inherit;
+    font-size: var(--softkey-font-size);
+    font-weight: var(--softkey-font-weight);
+    color: var(--softkey-color);
+    background: unset; }
+    .kai-softkey-btn:active, .kai-softkey-btn.active {
+      background-color: var(--softkey-background-color--active); }
+    .kai-softkey-btn[disabled] {
+      --softkey-color: var(--softkey-color--disabled);
+      background-color: transparent;
+      pointer-events: auto; }
+    .kai-softkey-btn[data-icon] {
+      --softkey-font-size: var(--softkey-icon-size);
+      --softkey-color: var(--softkey-color--icon); }
+
+.kai-empty {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%; }
+  .kai-empty-text {
+    color: var(--color-gs90);
+    padding: 1rem;
+    width: 100%;
+    text-align: center; }

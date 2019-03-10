@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="kai-header"
+>
+  <h1
+    className="h1"
+    data-l10n-id="header"
+  />
+</header>
+`;
