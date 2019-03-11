@@ -26,7 +26,8 @@
   --header-cyan-background: #045463;
   --header-blue-background: #20407b;
   --header-orange-background: #381e0d;
-  --header-red-background: #5b0700; }
+  --header-red-background: #5b0700;
+  color: var(--color-gs90); }
 
 .theme-system {
   --highlight-color: var(--color-purple);
@@ -174,3 +175,54 @@ p {
     padding: 1rem;
     width: 100%;
     text-align: center; }
+
+.kai-list-item:focus .kai-list-icon {
+  color: var(--color-gs00); }
+
+.kai-list-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .kai-list-container ul {
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+
+.kai-list-item {
+  width: 100%;
+  height: 6rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  outline: none; }
+  .kai-list-item:focus {
+    color: var(--color-gs00);
+    background: var(--highlight-color); }
+
+.kai-list-icon {
+  height: 100%;
+  text-align: center;
+  color: var(--highlight-color); }
+  .kai-list-icon > span {
+    font-size: 3.2rem;
+    line-height: 6rem; }
+
+.kai-list-line {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: calc(90% - 6rem); }
+  .kai-list-line span, .kai-list-line label {
+    margin: 0 0 0 1rem;
+    padding: 0;
+    width: 100%;
+    overflow: hidden; }
+
+.kai-list-primary {
+  font-size: 1.7rem; }
+
+.kai-list-secondary {
+  font-size: 1.4rem; }

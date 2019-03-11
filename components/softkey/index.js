@@ -12,7 +12,7 @@ const Button = (props) => {  // eslint-disable-line
     : null;
 
   return <button className={`${prefixCls}-btn`} {...content} />;
-}
+};
 
 export default class SoftKey extends React.Component {
   constructor(props) {

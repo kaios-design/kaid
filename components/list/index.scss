@@ -1,0 +1,70 @@
+.kai-list {
+  &-item:focus {
+    // can't use &-icon here, if updates prefix 'kai-list',
+    // need also to modify this 'kai-list-icon'
+    .kai-list-icon {
+      color: var(--color-gs00);
+    }
+  }
+
+  &-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  &-item {
+    width: 100%;
+    height: 6rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    outline: none;
+    &:focus {
+      color: var(--color-gs00);
+      background: var(--highlight-color);
+    }
+  }
+
+  &-icon {
+    height: 100%;
+    text-align: center;
+    color: var(--highlight-color);
+
+    >span {
+      font-size: 3.2rem;
+      line-height: 6rem;
+    }
+  }
+
+  &-line {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: calc(90% - 6rem);
+
+    span, label {
+      margin: 0 0 0 1rem;
+      padding: 0;
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &-primary {
+    font-size: 1.7rem;
+  }
+
+  &-secondary {
+    font-size: 1.4rem;
+  }
+}
