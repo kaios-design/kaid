@@ -1,7 +1,3 @@
-function scrollIntoView(el) {
-  el.scrollIntoView(false);
-}
-
 class ListNav {
   constructor(selector, container) {
     this.selector = selector;
