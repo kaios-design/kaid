@@ -165,6 +165,17 @@ p {
       --softkey-font-size: var(--softkey-icon-size);
       --softkey-color: var(--softkey-color--icon); }
 
+.kai-empty {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%; }
+  .kai-empty-text {
+    color: var(--color-gs90);
+    padding: 1rem;
+    width: 100%;
+    text-align: center; }
+
 .kai-list-item:focus .kai-list-icon {
   color: var(--color-gs00); }
 
@@ -215,14 +226,3 @@ p {
 
 .kai-list-secondary {
   font-size: 1.4rem; }
-
-.kai-empty {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  height: 100%; }
-  .kai-empty-text {
-    color: var(--color-gs90);
-    padding: 1rem;
-    width: 100%;
-    text-align: center; }

@@ -39,7 +39,14 @@ class ListNav {
   }
 
   onFocus = () => {
-    if (!this.currentItem) {
+    if (this.currentItem) {
+      // Set focus to current item if focused to list container
+      // for example, back to list view from another panel
+      if (document.activeElement === this.container) {
+        this.setFocus(this.currentItem);
+      }
+    } else {
+      // no current item, normally focus to 1st item.
       const next = this.find(1);
       this.setFocus(next);
     }
