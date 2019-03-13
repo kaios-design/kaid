@@ -8,6 +8,10 @@
   text-transform: capitalize;
 }
 
-p {
+.h1, .p-pri, p {
   font-size: 1.7rem;
+}
+
+.h1 {
+  text-transform: capitalize
 }

@@ -72,13 +72,20 @@
   font-size: 1.7rem;
   text-transform: capitalize; }
 
-p {
+.h1, .p-pri, p {
   font-size: 1.7rem; }
+
+.h1 {
+  text-transform: capitalize; }
 
 :root {
   --statusbar-height: 2.6rem;
   --softkeybar-height: 3rem;
   --header-height: 2.8rem; }
+
+ul {
+  margin: 0;
+  padding: 0; }
 
 .kai-header h1 {
   text-overflow: ellipsis;
@@ -226,3 +233,30 @@ p {
 
 .kai-list-secondary {
   font-size: 1.4rem; }
+
+.kai-menu {
+  z-index: 7777;
+  position: absolute;
+  bottom: var(--softkeybar-height);
+  width: 100%;
+  height: calc(100% - var(--softkeybar-height));
+  background-color: rgba(0, 0, 0, 0.85);
+  color: var(--color-gs90); }
+  .kai-menu-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: calc(100% - 2rem - var(--statusbar-height)); }
+  .kai-menu-header {
+    padding: .5rem 1rem;
+    text-align: center;
+    background-color: var(--color-gs20); }
+  .kai-menu-item {
+    line-height: 4.8rem;
+    padding: 0 1rem;
+    background-color: var(--color-gs00);
+    text-transform: capitalize;
+    outline: none; }
+    .kai-menu-item:focus {
+      color: var(--color-gs00);
+      background-color: var(--highlight-color); }
