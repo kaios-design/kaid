@@ -68,10 +68,13 @@ class Menu extends React.Component {
       />
     ));
     return (
-      <div ref={(node) => { this.el = node }} className="kai-menu-wrapper" tabIndex="-1" onKeyDown={this.onKeyDown}>
-        <div className="kai-menu-header h1" data-l10n-id={header || 'options'} />
-        <ul>{menu}</ul>
-      </div>
+      <>
+        <div ref={(node) => { this.el = node }} className="kai-menu-wrapper" tabIndex="-1" onKeyDown={this.onKeyDown}>
+          <div className="kai-menu-header h1" data-l10n-id={header || 'options'} />
+          <ul>{menu}</ul>
+        </div>
+        <SoftKey />
+      </>
     );
   }
 

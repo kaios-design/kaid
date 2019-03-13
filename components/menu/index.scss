@@ -1,15 +1,15 @@
 .kai-menu {
   z-index: 7777;
   position: absolute;
-  bottom: var(--softkeybar-height);
+  bottom: 0;
   width: 100%;
-  height: calc(100% - var(--softkeybar-height));
+  height: 100%;
   background-color: rgba(0, 0, 0, .85);
   color: var(--color-gs90);
 
   &-wrapper {
     position: absolute;
-    bottom: 0;
+    bottom: var(--softkeybar-height);
     width: 100%;
     max-height: calc(100% - 2rem - var(--statusbar-height));
   }
