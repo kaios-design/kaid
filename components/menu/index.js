@@ -29,18 +29,19 @@ class Menu extends React.Component {
   }
 
   onKeyDown = e => {
-    const { options } = this.props;
+    const { options, onCancel } = this.props;
     let option;
     switch (e.key) {
       case 'Enter':
-        option = options[+e.target.dataset.index];
-        if (option && option.callback) {
-          option.callback();
-        }
         this.close();
+        option = options[+e.target.dataset.index];
+        if (option && option.onSelect) {
+          option.onSelect();
+        }
         break;
 
       case 'Backspace':
+        onCancel && onCancel();
         this.close();
         e.preventDefault();
         break;
