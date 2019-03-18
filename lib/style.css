@@ -120,7 +120,7 @@ ul {
   --softkey-font-weight: 600; }
 
 .kai-softkey {
-  z-index: var(--z-index--softkey, 99999);
+  z-index: var(--z-index--softkey, 6666);
   display: flex;
   justify-content: space-between;
   outline: none;
