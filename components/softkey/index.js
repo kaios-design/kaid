@@ -31,6 +31,16 @@ export default class SoftKey extends React.Component {
     UpdateListeners.add(this.handleUpdate);
   }
 
+  componentWillUpdate(nextProps, nextState) {
+    let buttons = Array.from(this.element.getElementsByTagName('button'));
+    buttons.forEach((button) => {
+      if (!nextState[button.dataset.position]) {
+        // Remove old l10n if the next l10n id is empty.
+        button.textContent = '';
+      }
+    });
+  }
+
   componentWillUnmount() {
     UpdateListeners.delete(this.handleUpdate);
   }
