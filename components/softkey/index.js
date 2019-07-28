@@ -31,24 +31,23 @@ export default class SoftKey extends React.Component {
     UpdateListeners.add(this.handleUpdate);
   }
 
+  componentWillUnmount() {
+    UpdateListeners.delete(this.handleUpdate);
+  }
+
   componentWillUpdate(nextProps, nextState) {
     let buttons = Array.from(this.element.getElementsByTagName('button'));
     buttons.forEach((button) => {
       if (!nextState[button.dataset.position]) {
-        // Remove old l10n if the next l10n id is empty.
+        // Remove Sofykey when data-l10n-id does not exist
         button.textContent = '';
       }
     });
   }
 
-  componentWillUnmount() {
-    UpdateListeners.delete(this.handleUpdate);
-  }
-
   handleUpdate = (keys) => {
     this.setState(keys);
   }
-
   render() {
     return (
       <form className={`${prefixCls} visible`} data-type="action">
