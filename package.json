@@ -1,6 +1,6 @@
 {
   "name": "kaid",
-  "version": "0.0.1-alpha9",
+  "version": "0.0.2",
   "main": "lib/kaid.js",
   "license": "MIT",
   "scripts": {

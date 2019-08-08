@@ -3,16 +3,26 @@ import './index.scss';
 
 const prefixCls = 'kai-softkey';
 
-const Button = (props) => {  // eslint-disable-line
-  const content = props.content
+class Button extends React.Component {
+  componentDidUpdate() {
+    const { content } = this.props;
+    if (!content) {
+      this.element.textContent = '';
+    }
+  }
+
+  render() {
+    const { content } = this.props;
+    const data = content
     ? {
-      'data-icon': props.content.icon,
-      'data-l10n-id': props.content.text || props.content
+      'data-icon': content.icon,
+      'data-l10n-id': content.text || content
     }
     : null;
 
-  return <button className={`${prefixCls}-btn`} {...content} />;
-};
+    return <button className={`${prefixCls}-btn`} {...data} ref={el => { this.element = el; }} />;
+  }
+}
 
 const DOMKeyMap = new Map();
 const UpdateListeners = new Set();
