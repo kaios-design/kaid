@@ -1,0 +1,51 @@
+:root {
+  --tabs-height: 3rem;
+}
+
+.kai-tab-view {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  &-tabs {
+    flex-shrink: 0;
+    font-size: 1.4rem;
+    overflow-x: hidden;
+    white-space: nowrap;
+    height: var(--tabs-height);
+    outline: none;
+    background-color: var(--tabs-background-color);
+    z-index: var(--z-index--tab, 999);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    top: 0;
+
+    > * {
+      margin: 0 0.25rem 0 0.25rem;
+
+      &:first-child {
+        margin: 0 0.25rem 0 1rem;
+      }
+
+      &:last-child {
+        margin: 0 1rem 0 0.25rem;
+      }
+    }
+  }
+
+  &-content {
+    flex-grow: 1;
+    height: calc(100% - 3rem - 3rem);
+    overflow: hidden;
+  }
+}
+
+.large-text .kai-tab-view-tabs {
+  font-size: 1.8rem;
+}
+
