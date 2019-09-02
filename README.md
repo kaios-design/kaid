@@ -7,7 +7,8 @@ UI Components (React) for KaiOS 2.5. Basic features of below components are impl
 - Header
 - List
 - Menu
-- Softkey
+- SoftKey
+- TabView
 
 See design guide of [UI Components](https://developer.kaiostech.com/design-guide/ui-component) at developer.kaiostech.com. Tests and new features may be added later.
 

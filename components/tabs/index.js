@@ -16,6 +16,7 @@ export default class TabView extends React.Component {
       isTransitionDone: true,
       activeChild: 0
     };
+    this.children = [];
   }
 
   handleChangeIndex = tabIndex => {
@@ -27,13 +28,16 @@ export default class TabView extends React.Component {
   };
 
   handleTabChange = (childIndex) => {
+    const {getTabIndex} = this.props;
     this.setState({activeChild: childIndex});
+    this.el.children[0].children[childIndex].scrollIntoView(true);
     this.el.scrollIntoView({
       behavior: 'auto',
       block: 'start',
       inline: 'center',
     });
     this.handleChangeIndex(childIndex);
+    getTabIndex(childIndex);
   };
 
   handleKeyDown = (e) => {
@@ -61,23 +65,25 @@ export default class TabView extends React.Component {
     }
   };
 
+  componentDidMount() {
+    const {activeChild} = this.state;
+    this.children[activeChild] && this.children[activeChild].focus();
+  }
+
+  componentDidUpdate() {
+    const {activeChild} = this.state;
+    this.children[activeChild] && this.children[activeChild].focus();
+  }
+
   render() {
     const {tabLabels, focusColor, children} = this.props;
     const {activeTab, isTransitionDone, activeChild} = this.state;
 
-    const renderChildren = () => {
-      return React.Children.map(children, (child, i) => {
-        return React.cloneElement(child, {
-          isActive: activeTab === i && isTransitionDone,
-        });
-      });
-    };
     return (
       <div className={prefixCls} ref={(node) => this.el = node} tabIndex='-1' onKeyDown={this.handleKeyDown}>
         <div className={tabViewTabs}>
           {tabLabels.map((label, i) => (
             <Tab
-              onChangeIndex={this.handleChangeIndex}
               key={`key-${i}`}
               label={label}
               focusColor={focusColor}
@@ -90,12 +96,18 @@ export default class TabView extends React.Component {
         <div className={tabViewContent}>
           <SwipeableViews
             axis={'x'}
-            index={activeTab}
-            onChangeIndex={this.handleChangeIndex}
+            index={activeChild}
             onTransitionEnd={this.handleTransitionEnd}
             disabled={true}
           >
-            {renderChildren()}
+            {
+              children.map((child, i) => {
+                return React.cloneElement(child, {
+                  ref: el => this.children[i] = el,
+                  isActive: activeTab === i && isTransitionDone
+                })
+              })
+            }
           </SwipeableViews>
         </div>
       </div>
