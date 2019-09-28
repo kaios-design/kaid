@@ -31,4 +31,9 @@
       background-color: var(--highlight-color);
     }
   }
+
+  &-items {
+    max-height: calc(100vh - var(--statusbar-height) - var(--softkeybar-height) - var(--header-height));
+    overflow-y: scroll;
+  }
 }

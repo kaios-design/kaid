@@ -56,6 +56,12 @@ class Menu extends React.Component {
     this.focusLast();
   }
 
+  menuItemsOnKeyDown = (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+      e.preventDefault();
+    }
+  }
+
   render() {
     const { header, type, options } = this.props;
     const menu = options.map((option, index) => (
@@ -72,7 +78,7 @@ class Menu extends React.Component {
       <>
         <div ref={(node) => { this.el = node }} className="kai-menu-wrapper" tabIndex="-1" onKeyDown={this.onKeyDown}>
           <div className="kai-menu-header h1" data-l10n-id={header || 'options'} />
-          <ul>{menu}</ul>
+          <ul className="kai-menu-items" onKeyDown={ this.menuItemsOnKeyDown }>{menu}</ul>
         </div>
         <SoftKey />
       </>

@@ -73,8 +73,8 @@ class ListNav {
   setFocus(el) {
     if (el) {
       this.currentItem = el;
-      el.scrollIntoView(false);
-      el.focus();
+      el.scrollIntoView({ block: "nearest" });
+      el.focus({preventScroll: true});
     }
   }
 
