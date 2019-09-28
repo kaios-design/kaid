@@ -28,14 +28,17 @@ exports[`Softkey renders softkey buttons correctly 1`] = `
   <button
     class="kai-softkey-btn"
     data-l10n-id="lsk"
+    type="button"
   />
   <button
     class="kai-softkey-btn"
     data-l10n-id="ok"
+    type="button"
   />
   <button
     class="kai-softkey-btn"
     data-l10n-id="rsk"
+    type="button"
   />
 </form>
 `;

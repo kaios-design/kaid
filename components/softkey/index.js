@@ -20,7 +20,7 @@ class Button extends React.Component {
     }
     : null;
 
-    return <button className={`${prefixCls}-btn`} {...data} ref={el => { this.element = el; }} />;
+    return <button type="button" className={`${prefixCls}-btn`} {...data} ref={el => { this.element = el; }} />;
   }
 }
 
