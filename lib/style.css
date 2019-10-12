@@ -1,83 +1,13 @@
-.kai-list-item:focus .kai-list-icon {
-  color: var(--color-gs00); }
-
-.kai-list-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden; }
-  .kai-list-container ul {
-    margin: 0;
-    padding: 0;
-    width: 100%; }
-
-.kai-list-item {
-  width: 100%;
-  height: 6rem;
-  padding: 0 1rem;
+.kai-empty {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  overflow: hidden;
-  outline: none; }
-  .kai-list-item:focus {
-    color: var(--color-gs00);
-    background: var(--highlight-color); }
-
-.kai-list-icon {
-  height: 100%;
-  text-align: center;
-  color: var(--highlight-color); }
-  .kai-list-icon > span {
-    font-size: 3.2rem;
-    line-height: 6rem; }
-
-.kai-list-line {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  width: calc(90% - 6rem); }
-  .kai-list-line span, .kai-list-line label {
-    margin: 0 0 0 1rem;
-    padding: 0;
+  flex-grow: 1;
+  height: 100%; }
+  .kai-empty-text {
+    color: var(--color-gs90);
+    padding: 1rem;
     width: 100%;
-    overflow: hidden; }
-
-.kai-list-primary {
-  font-size: 1.7rem; }
-
-.kai-list-secondary {
-  font-size: 1.4rem; }
-
-.kai-menu {
-  z-index: 7777;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: var(--color-gs90); }
-  .kai-menu-wrapper {
-    position: absolute;
-    bottom: var(--softkeybar-height);
-    width: 100%;
-    max-height: calc(100% - 2rem - var(--statusbar-height)); }
-  .kai-menu-header {
-    padding: .5rem 1rem;
-    text-align: center;
-    background-color: var(--color-gs20); }
-  .kai-menu-item {
-    line-height: 4.8rem;
-    padding: 0 1rem;
-    background-color: var(--color-gs00);
-    text-transform: capitalize;
-    outline: none; }
-    .kai-menu-item:focus {
-      color: var(--color-gs00);
-      background-color: var(--highlight-color); }
-  .kai-menu-items {
-    max-height: calc(100vh - var(--statusbar-height) - var(--softkeybar-height) - var(--header-height));
-    overflow-y: scroll; }
+    text-align: center; }
 
 :root {
   --softkeybar-background-color: var(--color-gs20, #cccccc);
@@ -142,56 +72,56 @@
       --softkey-font-size: var(--softkey-icon-size);
       --softkey-color: var(--softkey-color--icon); }
 
-.kai-empty {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  height: 100%; }
-  .kai-empty-text {
-    color: var(--color-gs90);
-    padding: 1rem;
-    width: 100%;
-    text-align: center; }
+.kai-list-item:focus .kai-list-icon {
+  color: var(--color-gs00); }
 
-.kai-dialog {
-  z-index: 9999;
-  position: absolute;
-  bottom: 0;
+.kai-list-container {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: var(--color-gs90); }
-  .kai-dialog-wrapper {
-    position: absolute;
-    bottom: var(--softkeybar-height);
-    width: 100%;
-    max-height: calc(100% - 2rem - var(--statusbar-height)); }
-  .kai-dialog-header {
-    padding: .5rem 1rem;
-    text-align: center;
-    background-color: var(--color-gs20); }
-  .kai-dialog-container {
-    background-color: var(--color-gs00);
-    padding: 1rem; }
-    .kai-dialog-container.prompt {
-      color: var(--color-gs00);
-      background-color: var(--highlight-color); }
-      .kai-dialog-container.prompt p {
-        margin-top: -.5rem;
-        font-size: 1.4rem; }
-      .kai-dialog-container.prompt input:focus {
-        border: none; }
-  .kai-dialog-content {
+  overflow: hidden; }
+  .kai-list-container ul {
     margin: 0;
-    overflow-y: scroll;
-    text-transform: capitalize; }
-  .kai-dialog-input {
-    display: block;
+    padding: 0;
+    width: 100%; }
+
+.kai-list-item {
+  width: 100%;
+  height: 6rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  outline: none; }
+  .kai-list-item:focus {
+    color: var(--color-gs00);
+    background: var(--highlight-color); }
+
+.kai-list-icon {
+  height: 100%;
+  text-align: center;
+  color: var(--highlight-color); }
+  .kai-list-icon > span {
+    font-size: 3.2rem;
+    line-height: 6rem; }
+
+.kai-list-line {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: calc(90% - 6rem); }
+  .kai-list-line span, .kai-list-line label {
+    margin: 0 0 0 1rem;
+    padding: 0;
     width: 100%;
-    height: 3.6rem;
-    padding: 0 1rem;
-    margin-top: .5rem;
-    box-sizing: border-box; }
+    overflow: hidden; }
+
+.kai-list-primary {
+  font-size: 1.7rem; }
+
+.kai-list-secondary {
+  font-size: 1.4rem; }
 
 :root {
   --color-gs100: #000000;
@@ -303,3 +233,73 @@ ul {
     text-align: center;
     padding: 0 1rem;
     margin: 0; }
+
+.kai-menu {
+  z-index: 7777;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: var(--color-gs90); }
+  .kai-menu-wrapper {
+    position: absolute;
+    bottom: var(--softkeybar-height);
+    width: 100%;
+    max-height: calc(100% - 2rem - var(--statusbar-height)); }
+  .kai-menu-header {
+    padding: .5rem 1rem;
+    text-align: center;
+    background-color: var(--color-gs20); }
+  .kai-menu-item {
+    line-height: 4.8rem;
+    padding: 0 1rem;
+    background-color: var(--color-gs00);
+    text-transform: capitalize;
+    outline: none; }
+    .kai-menu-item:focus {
+      color: var(--color-gs00);
+      background-color: var(--highlight-color); }
+  .kai-menu-items {
+    max-height: calc(100vh - var(--statusbar-height) - var(--softkeybar-height) - var(--header-height));
+    overflow-y: scroll; }
+
+.kai-dialog {
+  z-index: 9999;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: var(--color-gs90); }
+  .kai-dialog-wrapper {
+    position: absolute;
+    bottom: var(--softkeybar-height);
+    width: 100%;
+    max-height: calc(100% - 2rem - var(--statusbar-height)); }
+  .kai-dialog-header {
+    padding: .5rem 1rem;
+    text-align: center;
+    background-color: var(--color-gs20); }
+  .kai-dialog-container {
+    background-color: var(--color-gs00);
+    padding: 1rem; }
+    .kai-dialog-container.prompt {
+      color: var(--color-gs00);
+      background-color: var(--highlight-color); }
+      .kai-dialog-container.prompt p {
+        margin-top: -.5rem;
+        font-size: 1.4rem; }
+      .kai-dialog-container.prompt input:focus {
+        border: none; }
+  .kai-dialog-content {
+    margin: 0;
+    overflow-y: scroll;
+    text-transform: capitalize; }
+  .kai-dialog-input {
+    display: block;
+    width: 100%;
+    height: 3.6rem;
+    padding: 0 1rem;
+    margin-top: .5rem;
+    box-sizing: border-box; }
