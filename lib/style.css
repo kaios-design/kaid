@@ -1,4 +1,67 @@
 :root {
+  --softkeybar-background-color: var(--color-gs20, #cccccc);
+  --softkey-color: var(--color-gs90, #323232);
+  --softkey-color--icon: var(--color-gs70, #6a6a6a);
+  --softkey-color--disabled: var(--color-eta, #c7c7c7);
+  --softkey-background-color--active: #00aacc;
+  --softkey-font-size: 1.4rem;
+  --softkey-icon-size: 2rem;
+  --softkey-font-weight: 600; }
+
+.kai-softkey {
+  z-index: var(--z-index--softkey, 6666);
+  display: flex;
+  justify-content: space-between;
+  outline: none;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--softkey-color);
+  background-color: var(--softkeybar-background-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  .kai-softkey:not(.visible) {
+    opacity: 0; }
+  .kai-softkey > * {
+    text-transform: capitalize; }
+    .kai-softkey > *:first-child {
+      width: 45%;
+      text-align: left; }
+    .kai-softkey > *:nth-child(2) {
+      --softkey-font-size: 1.6rem;
+      --softkey-font-weight: 700;
+      flex-shrink: 0;
+      min-width: 1rem;
+      max-width: 31.66667%;
+      text-transform: uppercase; }
+    .kai-softkey > *:last-child {
+      width: 45%;
+      text-align: right; }
+  .kai-softkey-btn {
+    display: block;
+    min-width: 1rem;
+    height: var(--softkeybar-height, 3rem);
+    line-height: var(--softkeybar-height, 3rem);
+    padding: 0 0.5rem;
+    border: unset;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: inherit;
+    font-size: var(--softkey-font-size);
+    font-weight: var(--softkey-font-weight);
+    color: var(--softkey-color);
+    background: unset; }
+    .kai-softkey-btn:active, .kai-softkey-btn.active {
+      background-color: var(--softkey-background-color--active); }
+    .kai-softkey-btn[disabled] {
+      --softkey-color: var(--softkey-color--disabled);
+      background-color: transparent;
+      pointer-events: auto; }
+    .kai-softkey-btn[data-icon] {
+      --softkey-font-size: var(--softkey-icon-size);
+      --softkey-color: var(--softkey-color--icon); }
+
+:root {
   --color-gs100: #000000;
   --color-gs90: #323232;
   --color-gs70: #6a6a6a;
@@ -108,80 +171,6 @@ ul {
     text-align: center;
     padding: 0 1rem;
     margin: 0; }
-
-:root {
-  --softkeybar-background-color: var(--color-gs20, #cccccc);
-  --softkey-color: var(--color-gs90, #323232);
-  --softkey-color--icon: var(--color-gs70, #6a6a6a);
-  --softkey-color--disabled: var(--color-eta, #c7c7c7);
-  --softkey-background-color--active: #00aacc;
-  --softkey-font-size: 1.4rem;
-  --softkey-icon-size: 2rem;
-  --softkey-font-weight: 600; }
-
-.kai-softkey {
-  z-index: var(--z-index--softkey, 6666);
-  display: flex;
-  justify-content: space-between;
-  outline: none;
-  text-align: center;
-  white-space: nowrap;
-  color: var(--softkey-color);
-  background-color: var(--softkeybar-background-color);
-  position: absolute;
-  bottom: 0;
-  width: 100%; }
-  .kai-softkey:not(.visible) {
-    opacity: 0; }
-  .kai-softkey > * {
-    text-transform: capitalize; }
-    .kai-softkey > *:first-child {
-      width: 45%;
-      text-align: left; }
-    .kai-softkey > *:nth-child(2) {
-      --softkey-font-size: 1.6rem;
-      --softkey-font-weight: 700;
-      flex-shrink: 0;
-      min-width: 1rem;
-      max-width: 31.66667%;
-      text-transform: uppercase; }
-    .kai-softkey > *:last-child {
-      width: 45%;
-      text-align: right; }
-  .kai-softkey-btn {
-    display: block;
-    min-width: 1rem;
-    height: var(--softkeybar-height, 3rem);
-    line-height: var(--softkeybar-height, 3rem);
-    padding: 0 0.5rem;
-    border: unset;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: inherit;
-    font-size: var(--softkey-font-size);
-    font-weight: var(--softkey-font-weight);
-    color: var(--softkey-color);
-    background: unset; }
-    .kai-softkey-btn:active, .kai-softkey-btn.active {
-      background-color: var(--softkey-background-color--active); }
-    .kai-softkey-btn[disabled] {
-      --softkey-color: var(--softkey-color--disabled);
-      background-color: transparent;
-      pointer-events: auto; }
-    .kai-softkey-btn[data-icon] {
-      --softkey-font-size: var(--softkey-icon-size);
-      --softkey-color: var(--softkey-color--icon); }
-
-.kai-empty {
-  display: flex;
-  align-items: center;
-  flex-grow: 1;
-  height: 100%; }
-  .kai-empty-text {
-    color: var(--color-gs90);
-    padding: 1rem;
-    width: 100%;
-    text-align: center; }
 
 .kai-list-item:focus .kai-list-icon {
   color: var(--color-gs00); }
@@ -300,3 +289,86 @@ ul {
     padding: 0 1rem;
     margin-top: .5rem;
     box-sizing: border-box; }
+
+.kai-empty {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%; }
+  .kai-empty-text {
+    color: var(--color-gs90);
+    padding: 1rem;
+    width: 100%;
+    text-align: center; }
+
+:root {
+  --tabs-height: 3rem; }
+
+.kai-tab-view {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap; }
+  .kai-tab-view-tabs {
+    flex-shrink: 0;
+    font-size: 1.4rem;
+    overflow-x: hidden;
+    white-space: nowrap;
+    height: var(--tabs-height);
+    outline: none;
+    background-color: var(--tabs-background-color);
+    z-index: var(--z-index--tab, 999);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    top: 0; }
+    .kai-tab-view-tabs > * {
+      margin: 0 0.25rem 0 0.25rem; }
+      .kai-tab-view-tabs > *:first-child {
+        margin: 0 0.25rem 0 1rem; }
+      .kai-tab-view-tabs > *:last-child {
+        margin: 0 1rem 0 0.25rem; }
+  .kai-tab-view-content {
+    flex-grow: 1;
+    height: calc(100% - 3rem - 3rem);
+    overflow: hidden; }
+
+.large-text .kai-tab-view-tabs {
+  font-size: 1.8rem; }
+
+:root {
+  --tab-background-color: var(--color-gs00); }
+
+.kai-tab-active {
+  outline: none;
+  text-align: center;
+  background-color: var(--tab-background-color);
+  width: 100%;
+  height: 0.35rem;
+  border-radius: 8px;
+  margin-bottom: 0.2rem;
+  box-shadow: 0 2.45rem 0 0 var(--tab-underline-color); }
+  .kai-tab-active-label {
+    margin: 0 0.5rem;
+    overflow: hidden;
+    height: 3rem;
+    line-height: 3rem;
+    font-weight: 900; }
+
+.kai-tab-inactive {
+  outline: none;
+  text-align: center;
+  background-color: var(--tab-background-color);
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 6px;
+  margin-bottom: 0.2rem; }
+  .kai-tab-inactive-label {
+    margin: 0 0.5rem;
+    overflow: hidden;
+    height: 3rem;
+    line-height: 3rem;
+    font-weight: 200; }

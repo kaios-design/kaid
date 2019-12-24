@@ -29,7 +29,8 @@
   },
   "dependencies": {
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "react-swipeable-views": "^0.13.3"
   },
   "peerDependencies": {
     "react": ">=16.0.0",
